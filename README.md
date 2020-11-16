@@ -53,21 +53,21 @@ _Languages: English (this file), [Chinese](README.zh-cn.md), [Brazilian Portugue
 
 # About Get
 
-- GetX is an extra-light and powerful solution for Flutter. It combines high performance state management, intelligent dependency injection, and route management in a quick and practical way.
+- Get is an extra-light and powerful solution for Flutter. It combines high performance state management, intelligent dependency injection, and route management in a quick and practical way.
 
-- GetX has 3 basic principles, this means that this is the priority for all resources in the library: **PRODUCTIVITY, PERFORMANCE AND ORGANIZATION.**
+- Get has 3 basic principles, this means that this is the priority for all resources in the library: **PRODUCTIVITY, PERFORMANCE AND ORGANIZATION.**
 
-  - **PERFORMANCE:** GetX is focused on performance and minimum consumption of resources. GetX does not use Streams or ChangeNotifier.
+  - **PERFORMANCE:** Get is focused on performance and minimum consumption of resources. Get does not use Streams or ChangeNotifier.
   
-  - **PRODUCTIVITY:** GetX uses an easy and pleasant syntax. No matter what you want to do, there is always an easier way with Getx. It will save hours of development, and will extract the maximum performance that your application can deliver. 
-  Generally, the developer should be concerned with removing controllers from memory. With GetX this is not necessary, because resources are removed from memory when they are not used by default. If you want to keep it in memory, you must explicitly declare "permanent: true" in your dependency. That way, in addition to saving time, you are less at risk of having unnecessary dependencies on memory. Dependency loading is also lazy by default.
+  - **PRODUCTIVITY:** Get uses an easy and pleasant syntax. No matter what you want to do, there is always an easier way with Getx. It will save hours of development, and will extract the maximum performance that your application can deliver. 
+  Generally, the developer should be concerned with removing controllers from memory. With Get this is not necessary, because resources are removed from memory when they are not used by default. If you want to keep it in memory, you must explicitly declare "permanent: true" in your dependency. That way, in addition to saving time, you are less at risk of having unnecessary dependencies on memory. Dependency loading is also lazy by default.
 
-  - **ORGANIZATION:** GetX allows the total decoupling of the View, presentation logic, business logic, dependency injection, and navigation. You do not need context to navigate between routes, so you are not dependent on the widget tree (visualization) for this. You don't need context to access your controllers/blocs through an inheritedWidget, so you completely decouple your presentation logic and business logic from your visualization layer. You do not need to inject your Controllers/Models/Blocs classes into your widget tree through multiproviders, for this GetX uses its own dependency injection feature, decoupling the DI from its view completely.
-  With GetX you know where to find each feature of your application, having clean code by default. This in addition to facilitating maintenance, makes the sharing of modules, something that until then in Flutter was unthinkable, something totally possible.
+  - **ORGANIZATION:** Get allows the total decoupling of the View, presentation logic, business logic, dependency injection, and navigation. You do not need context to navigate between routes, so you are not dependent on the widget tree (visualization) for this. You don't need context to access your controllers/blocs through an inheritedWidget, so you completely decouple your presentation logic and business logic from your visualization layer. You do not need to inject your Controllers/Models/Blocs classes into your widget tree through multiproviders, for this Get uses its own dependency injection feature, decoupling the DI from its view completely.
+  With Get you know where to find each feature of your application, having clean code by default. This in addition to facilitating maintenance, makes the sharing of modules, something that until then in Flutter was unthinkable, something totally possible.
   BLoC was a starting point for organizing code in Flutter, it separates business logic from visualization. Getx is a natural evolution of this, not only separating the business logic, but the presentation logic. Bonus injection of dependencies and routes are also decoupled, and the data layer is out of it all. You know where everything is, and all of this in an easier way than building a hello world.
-  GetX is the easiest, practical and scalable way to build high-performance applications with the Flutter SDK, with a large ecosystem around it that works perfectly together, being easy for beginners, and accurate for experts. It is secure, stable, up-to-date, and offers a huge range of APIs build-in that are not present on default Flutter SDK.
+  Get is the easiest, practical and scalable way to build high-performance applications with the Flutter SDK, with a large ecosystem around it that works perfectly together, being easy for beginners, and accurate for experts. It is secure, stable, up-to-date, and offers a huge range of APIs build-in that are not present on default Flutter SDK.
 
-- GetX is not a bloated. It has a multitude of features that allow you to start programming without worrying about anything, but each of these features are in separate containers, and are only started after use. If you only use State Management, only State Management will be compiled. If you only use routes, nothing from the state management will be compiled.
+- Get is not a bloated. It has a multitude of features that allow you to start programming without worrying about anything, but each of these features are in separate containers, and are only started after use. If you only use State Management, only State Management will be compiled. If you only use routes, nothing from the state management will be compiled.
 
 - Getx has a huge ecosystem, a large community, a large number of collaborators, and will be maintained as long as the Flutter exists. Getx too is capable of running with the same code on Android, iOS, Web, Mac, Linux, Windows, and on your server.
 **It is possible to fully reuse your code made on the frontend on your backend with [Get Server](https://github.com/jonataslaw/get_server)**.
@@ -92,7 +92,7 @@ Import get in files that it will be used:
 import 'package:get/get.dart';
 ```
 
-# Counter App with GetX
+# Counter App with Get
 
 The "counter" project created by default on new project on Flutter has over 100 lines (with comments). To show the power of Get, I will demonstrate how to make a "counter" changing the state with each click, switching between pages and sharing the state between screens, all in an organized way, separating the business logic from the view, in ONLY 26 LINES CODE INCLUDING COMMENTS.
 
@@ -208,7 +208,7 @@ You will get a good idea of GetX power.
 
 ## Route management
 
-If you are going to use routes/snackbars/dialogs/bottomsheets without context, GetX is excellent for you too, just see it:
+If you are going to use routes/snackbars/dialogs/bottomsheets without context, Get is excellent for you too, just see it:
 
 Add "Get" before your MaterialApp, turning it into GetMaterialApp
 
@@ -358,7 +358,7 @@ return GetMaterialApp(
 
 ## Change Theme
 
-Please do not use any higher level widget than `GetMaterialApp` in order to update it. This can trigger duplicate keys. A lot of people are used to the prehistoric approach of creating a "ThemeProvider" widget just to change the theme of your app, and this is definitely NOT necessary with **GetX™**.
+Please do not use any higher level widget than `GetMaterialApp` in order to update it. This can trigger duplicate keys. A lot of people are used to the prehistoric approach of creating a "ThemeProvider" widget just to change the theme of your app, and this is definitely NOT necessary with **Get™**.
 
 You can create your custom theme and simply add it within `Get.changeTheme` without any boilerplate for that:
 
@@ -366,7 +366,7 @@ You can create your custom theme and simply add it within `Get.changeTheme` with
 Get.changeTheme(ThemeData.light());
 ```
 
-If you want to create something like a button that changes the Theme in `onTap`, you can combine two **GetX™** APIs for that:
+If you want to create something like a button that changes the Theme in `onTap`, you can combine two **Get™** APIs for that:
 
 - The api that checks if the dark `Theme` is being used.
 - And the `Theme` Change API, you can just put this within an `onPressed`:
@@ -745,7 +745,7 @@ Because of the _cache_, can't be a `const Stateless`.
 
 > So, when do you need to "cache" a Controller?
 
-If you use, another "not so common" feature of **GetX**: `Get.create()`.
+If you use, another "not so common" feature of **Get**: `Get.create()`.
 
 `Get.create(()=>Controller())` will generate a new `Controller` each time you call
 `Get.find<Controller>()`,
@@ -756,7 +756,7 @@ to keep a list of Todo items. So, if the widget gets "rebuilt", it will keep the
 #### GetxService
 
 This class is like a `GetxController`, it shares the same lifecycle ( `onInit()`, `onReady()`, `onClose()`).
-But has no "logic" inside of it. It just notifies **GetX** Dependency Injection system, that this subclass
+But has no "logic" inside of it. It just notifies **Get** Dependency Injection system, that this subclass
 **can not** be removed from memory.
 
 So is super useful to keep your "Services" always reachable and active with `Get.find()`. Like:
@@ -874,7 +874,7 @@ This library will always be updated and implementing new features. Feel free to 
 
 ## Community channels
 
-GetX has a highly active and helpful community. If you have questions, or would like any assistance regarding the use of this framework, please join our community channels, your question will be answered more quickly, and it will be the most suitable place. This repository is exclusive for opening issues, and requesting resources, but feel free to be part of GetX Community.
+Get has a highly active and helpful community. If you have questions, or would like any assistance regarding the use of this framework, please join our community channels, your question will be answered more quickly, and it will be the most suitable place. This repository is exclusive for opening issues, and requesting resources, but feel free to be part of Get Community.
 
 | **Slack**                                                                                                                   | **Discord**                                                                                                                 | **Telegram**                                                                                                          |
 | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
